@@ -1,31 +1,33 @@
 {
-  "npmScope": "lood",
-  "affected": {
-    "defaultBase": "master"
-  },
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
+  "affected": { "defaultBase": "master" },
+  "npmScope": "lood",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "NjBkYTViMTQtZTM2ZC00YjI3LWE5ZjAtZDg5MjUxM2MyNDE4fHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "front-client": { "tags": [] },
+    "front-client-e2e": {
+      "tags": [],
+      "implicitDependencies": ["front-client"]
+    },
+    "front-admin": { "tags": [] },
+    "front-admin-e2e": { "tags": [], "implicitDependencies": ["front-admin"] },
+    "back": { "tags": [] }
+  }
 }
