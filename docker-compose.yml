@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  client:
+    build: 
+      context: .
+      dockerfile: ./apps/front-client/Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./apps/front-client/src:/app/src
+
+  admin:
+    build: 
+      context: .
+      dockerfile: ./apps/front-admin/Dockerfile
+    ports:
+      - 3002:3002
+    volumes:
+      - ./apps/front-admin/src:/app/src
+
+  back:
+    build: 
+      context: .
+      dockerfile: ./apps/back/Dockerfile
+    ports:
+      - 3001:3001
+    volumes:
+      - ./apps/back/src:/app/src
