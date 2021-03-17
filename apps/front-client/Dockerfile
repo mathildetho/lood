@@ -1,12 +1,12 @@
 FROM node:14-alpine
 
-WORKDIR /home/node/app
+WORKDIR /app
 
 COPY ./apps/front-client/src .
 
 COPY ./package.json package.json
 
-RUN npm install
+RUN npm install --production
 
 EXPOSE 3000
 
