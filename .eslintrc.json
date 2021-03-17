@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "prettier"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -20,18 +20,9 @@
           }
         ],
         "linebreak-style": "off",
-        "react/jsx-uses-react": "off",
-        "react/react-in-jsx-scope": "off",
-        "react/prop-types": 0,
-        "prettier/prettier": [
-          "error",
-          {
-            "endOfLine": "auto"
-          }
-        ],
+        "prettier/prettier": ["error"],
         "no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }],
-        "no-underscore-dangle": "off",
-        "no-console": "off"
+        "no-underscore-dangle": "off"
       }
     },
     {
