@@ -254,7 +254,7 @@
           ],
           "options": {
             "outputPath": "dist/apps/back",
-            "main": "apps/back/src/server.ts",
+            "main": "apps/back/src/app.ts",
             "tsConfig": "apps/back/tsconfig.app.json",
             "assets": [
               "apps/back/src/assets"
