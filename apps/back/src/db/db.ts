@@ -1,25 +1,19 @@
 import mongoose from 'mongoose';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
-
-const dbUrl =
-  process.env.NODE_ENV !== 'test'
-    ? process.env.MONGODB_URI
-    : process.env.MONGODB_URI_TESTING;
+import { MONGODB } from '../config.js';
 
 const mongodbStart = async (): Promise<void> => {
   try {
     // Database
-    await mongoose.connect(`${dbUrl}`, {
+    await mongoose.connect(MONGODB, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
       autoIndex: true,
+      useFindAndModify: false,
     });
     console.log(`Connected to database`);
   } catch (err) {
-    console.error(err);
+    console.error("Connexion to database doesn't working", err);
   }
 };
 

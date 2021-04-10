@@ -1,18 +1,28 @@
-import { ApolloServer } from 'apollo-server';
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
 import cors from 'cors';
+import http from 'http';
+import * as dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
+import mongodbStart from './db/db';
+import serverApollo from './graphql/graphqlServer';
 
+dotenv.config();
+const port = process.env.PORT || 5000;
+
+// initialize express server with apollo and cors
+mongodbStart();
 const app = express();
-
-// Middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(cors());
 
-// Routes
-app.get('/', (_req: Request, res: Response) => {
-  res.send('Hello World');
+serverApollo.applyMiddleware({
+  app,
+  cors: false,
 });
 
-// Start Server
-export default app;
+const httpServer = new http.Server(app);
+
+app.use(cookieParser());
+
+httpServer.listen(port, () =>
+  console.log(`Apollo Server on http://localhost:${port}/graphql`)
+);
