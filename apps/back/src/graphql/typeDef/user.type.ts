@@ -5,10 +5,12 @@ const UserType = gql`
     _id: ID!
     email: String!
     password: String!
-    want: String!
-    name: String!
+    lookFor: String!
+    pseudo: String!
     birthdate: String!
     photo: String!
+    photoType: String!
+    status: String!
     sexe: String!
     description: String!
     favorite_food: [ID!]
@@ -22,35 +24,38 @@ const UserType = gql`
   input CreateUserInput {
     email: String
     password: String
-    want: String
-    name: String
+    lookFor: String
+    pseudo: String
     birthdate: String
     photo: String
+    photoType: String
     sexe: String
     description: String
   }
 
   input UpdateUserProfilInput {
-    want: String
-    name: String
+    lookFor: String
+    pseudo: String
     birthdate: String
     photo: String
+    photoType: String
     sexe: String
     description: String
   }
 
   type Query {
     getUser(_id: ID!): User!
-    loginUser(email: String!, password: String!): UserWithToken
   }
 
   type Mutation {
-    createUser(userInput: CreateUserInput!): UserWithToken
-    updateUserProfil(_id: ID!, userInput: UpdateUserProfilInput!): User
-    updateUserEmail(_id: ID!, email: String!): User
-    updateUserPassword(_id: ID!, password: String!): User
-    deleteUser(_id: ID!): User
-    likeFood(foodId: ID!): User
+    createUser(userInput: CreateUserInput!): User!
+    activateUser(token: String!): UserWithToken!
+    loginUser(email: String!, password: String!): UserWithToken
+    updateUserProfil(_id: ID!, userInput: UpdateUserProfilInput!): User!
+    updateUserEmail(_id: ID!, email: String!): User!
+    updateUserPassword(_id: ID!, password: String!): User!
+    deleteUser(_id: ID!): User!
+    likeFood(foodId: ID!): User!
   }
 `;
 

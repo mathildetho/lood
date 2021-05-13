@@ -1,0 +1,23 @@
+.icon {
+    outline: none;
+}
+
+.icon__svg {
+    position: relative;
+    display: flex;
+    align-items: center;
+    fill: var(--white);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.icon--revert {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.icon__svg svg {
+    width: 100%;
+    height: 100%;
+}

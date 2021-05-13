@@ -1,0 +1,49 @@
+.input {
+
+}
+
+.textarea {
+    height: 100%;
+}
+
+.fieldset {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.label {
+
+}
+
+.label--valid {
+    color: var(--white);
+}
+
+.label--error {
+    color: var(--light-pink);
+}
+
+.input__content {
+    background-color: var(--light-blue);
+    border-radius: 15px;
+    border: solid 1px transparent;
+    padding: 16px 16px;
+    outline: none;
+    caret-color: var(--white);
+    color: var(--white);
+}
+
+
+.input__content--error {
+    border: solid 1px var(--light-pink);
+}
+
+.input__textarea {
+    height: 100%;
+    resize: none;
+}
+
+.input__content::placeholder {
+    color: var(--blue);
+}

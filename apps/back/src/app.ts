@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import mongodbStart from './db/db';
 import serverApollo from './graphql/graphqlServer';
+import bodyParser from 'body-parser';
 
 dotenv.config();
 const port = process.env.PORT || 5000;
@@ -13,6 +14,10 @@ const port = process.env.PORT || 5000;
 mongodbStart();
 const app = express();
 app.use(cors());
+app.use(cookieParser());
+
+app.use(bodyParser.json({ limit: '5mb' }));
+app.use(bodyParser.urlencoded({ limit: '5mb', extended: true }));
 
 serverApollo.applyMiddleware({
   app,
@@ -20,8 +25,6 @@ serverApollo.applyMiddleware({
 });
 
 const httpServer = new http.Server(app);
-
-app.use(cookieParser());
 
 httpServer.listen(port, () =>
   console.log(`Apollo Server on http://localhost:${port}/graphql`)

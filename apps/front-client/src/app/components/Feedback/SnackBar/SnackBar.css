@@ -1,0 +1,44 @@
+.snackbar {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--light-pink);
+    color: var(--white);
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: var(--light-shadow);
+    padding: 1.5em;
+    width: auto;
+}
+
+.snackbar__message {
+    margin: 0;
+    user-select: none;
+}
+
+.snackbar__button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: transparent;
+    margin-left: 1em;
+    transition: background-color 0.15s ease;
+}
+
+.snackbar__button:hover {
+    background-color: var(--white);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.snackbar__button-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.snackbar__button:hover .icon__svg {
+    color: var(--light-pink);
+    fill: var(--light-pink);
+}

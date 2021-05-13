@@ -1,0 +1,282 @@
+body { 
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    font-family: var(--poppins);
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    overflow-y: hidden;
+    background-color: #2f52a0;
+}
+
+:root {
+    /* Colors */
+    --white: #fff;
+    --blue: #2f52a0;
+    --pink: #ed71a8;
+    --light-blue: #5071bc;
+    --light-pink: #faafd1;
+
+    /* Shadow */
+    --shadow: 0px 0px 18px 0px rgba(26,46,89,0.6);
+    --light-shadow: 0px 0px 18px 0px rgba(26,46,89,0.1);
+
+    /* Font Family */
+    --poppins: Poppins
+}
+
+/* Colors */
+.--white {
+    color: var(--white);
+}
+
+.--blue {
+    color: var(--blue);
+}
+
+.--pink {
+    color: var(--pink);
+}
+
+.--light-blue {
+    color: var(--light-blue);
+}
+
+.--light-pink {
+    color: var(--light-pink);
+}
+
+/* Background-color */
+.--bg-white {
+    background-color: var(--white);
+}
+
+.--bg-blue {
+    background-color: var(--blue);
+}
+
+.--bg-pink {
+    background-color: var(--pink);
+}
+
+.--bg-light-blue {
+    background-color: var(--light-blue);
+}
+
+.--bg-light-pink {
+    background-color: var(--light-pink);
+}
+
+/* fill-color */
+.--fill-white path {
+    fill: var(--white);
+}
+
+.--fill-blue path {
+    fill: var(--blue);
+}
+
+.--fill-pink path {
+    fill: var(--pink);
+}
+
+.--fill-light-blue path {
+    fill: var(--light-blue);
+}
+
+.--fill-light-pink path {
+    fill: var(--light-pink);
+}
+
+/* Shadow */
+.--shadow {
+    box-shadow: var(--shadow);
+}
+
+.--light-shadow {
+    box-shadow: var(--light-shadow);
+}
+
+/* Text */
+.--h1 {
+    font-family: var(--poppins);
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 42px;
+}
+
+.--h2 {
+    font-family: var(--poppins);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.--h3 {
+    font-family: var(--poppins);
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 25px;
+}
+
+.--button-text {
+    font-family: var(--poppins);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.--body-text {
+    font-family: var(--poppins);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.--body-text-small {
+    font-family: var(--poppins);
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+.--margin-left-0-5 {
+    margin-left: 4px;
+}
+  
+.--margin-right-0-5 {
+    margin-right: 4px;
+}
+  
+.--margin-bottom-0-5 {
+    margin-bottom: 4px;
+}
+  
+.--margin-top-0-5 {
+    margin-top: 4px;
+}
+  
+.--margin-left-1 {
+    margin-left: 8px;
+}
+  
+.--margin-right-1 {
+    margin-right: 8px;
+}
+  
+.--margin-bottom-1 {
+    margin-bottom: 8px !important;
+}
+  
+.--margin-top-1 {
+    margin-top: 8px;
+}
+  
+.--margin-left-2 {
+    margin-left: 16px;
+}
+  
+.--margin-right-2 {
+    margin-right: 16px;
+}
+  
+.--margin-bottom-2 {
+    margin-bottom: 16px;
+}
+  
+.--margin-top-2 {
+    margin-top: 16px;
+}
+  
+.--margin-left-3 {
+    margin-left: 24px;
+}
+  
+.--margin-right-3 {
+    margin-right: 24px;
+}
+  
+.--margin-bottom-3 {
+    margin-bottom: 24px;
+}
+  
+.--margin-top-3 {
+    margin-top: 24px;
+}
+  
+.--margin-left-4 {
+    margin-left: 32px;
+}
+  
+.--margin-right-4 {
+    margin-right: 32px;
+}
+  
+.--margin-bottom-4 {
+    margin-bottom: 32px !important;
+}
+  
+.--margin-top-4 {
+    margin-top: 32px;
+}
+  
+.--margin-left-5 {
+    margin-left: 40px;
+}
+  
+.--margin-right-5 {
+    margin-right: 40px;
+}
+  
+.--margin-bottom-5 {
+    margin-bottom: 40px;
+}
+  
+.--margin-top-5 {
+    margin-top: 40px;
+}  
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:focus {
+    outline: none;
+    border: 0;
+}
+
+
+/* Page */
+.page-layout {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.page-content--center {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

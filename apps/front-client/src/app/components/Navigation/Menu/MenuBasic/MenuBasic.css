@@ -1,0 +1,10 @@
+.MenuBasic {
+    padding-top: 3rem;
+    padding-left: 3rem;
+}
+
+.MenuBasic__logo {
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+}

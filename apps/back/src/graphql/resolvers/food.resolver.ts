@@ -29,7 +29,7 @@ export default {
 
       const food = await FoodSchema.findById(foodId);
       if (!food) {
-        throw new NotFoundError();
+        throw new NotFoundError("La food demandée n'existe pas");
       }
 
       return food;
@@ -37,7 +37,7 @@ export default {
     async getAllFood(): Promise<IFood[]> {
       const food = await FoodSchema.find();
       if (!food) {
-        throw new NotFoundError();
+        throw new NotFoundError("Il n'y a pas de food disponible");
       }
 
       return food;
@@ -51,9 +51,9 @@ export default {
       });
 
       if (foodWithSameTitle) {
-        throw new BadRequestError([
-          `A food already exists with the title ${data.foodInput.title}`,
-        ]);
+        throw new BadRequestError(
+          `A food already exists with the title ${data.foodInput.title}`
+        );
       }
 
       if (errors.length) {
@@ -79,9 +79,9 @@ export default {
       });
 
       if (foodWithSameTitle) {
-        throw new BadRequestError([
-          `A food already exists with the title ${data.foodInput.title}`,
-        ]);
+        throw new BadRequestError(
+          `A food already exists with the title ${data.foodInput.title}`
+        );
       }
 
       if (!mongoose.Types.ObjectId.isValid(foodId)) {

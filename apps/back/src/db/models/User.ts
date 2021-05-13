@@ -1,4 +1,5 @@
 import mongoose, { Types } from 'mongoose';
+import { Buffer } from 'buffer';
 
 type ID = Types.ObjectId;
 
@@ -8,10 +9,12 @@ export interface IUser extends mongoose.Document {
   _doc: Record<string, unknown>;
   email: string;
   password: string;
-  want: string;
-  name: string;
+  lookFor: string;
+  pseudo: string;
   birthdate: string;
   photo: string;
+  photoType: string;
+  status: string;
   sexe: string;
   description: string;
   favorite_food?: ID[];
@@ -20,16 +23,21 @@ export interface IUser extends mongoose.Document {
 const UserSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  want: {
+  lookFor: {
     type: String,
-    enum: ['woman', 'man', 'all'],
+    enum: ['Homme', 'Femme', 'Tous'],
   },
-  name: { type: String, required: true },
+  pseudo: { type: String, required: true },
   birthdate: { type: Date, required: true },
   photo: { type: String, required: true },
+  photoType: { type: String, required: true },
+  status: {
+    type: String,
+    enum: ['pending', 'active'],
+  },
   sexe: {
     type: String,
-    enum: ['woman', 'man', 'other'],
+    enum: ['Homme', 'Femme', 'Autre'],
   },
   description: {
     type: String,
@@ -42,6 +50,14 @@ const UserSchema = new Schema({
       ref: 'food',
     },
   ],
+});
+
+UserSchema.virtual('imgSrc').get(function () {
+  if (this.img !== null && this.imgType !== null) {
+    return `data:${this.imgType};charset=utf-8;base64,${this.img.toString(
+      'base64'
+    )}`;
+  }
 });
 
 export default mongoose.model<IUser>('user', UserSchema);

@@ -8,13 +8,13 @@ const expiration = 365 * 24 * 60 * 60 * 1000;
 type ID = Types.ObjectId;
 
 const createToken = ({
-  id,
+  payload,
   maxAge = expiration,
 }: {
-  id: ID;
+  payload: { email?: string; password?: string; id?: ID };
   maxAge?: number;
 }): string => {
-  const token = jwt.sign({ id }, jwtsecret, {
+  const token = jwt.sign(payload, jwtsecret, {
     expiresIn: maxAge,
   });
 

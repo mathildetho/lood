@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {},
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "typeRoots": ["node_modules/@types"]
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "resolve": {
+    "extensions": [".ts", ".js", ".json", ".tsx"]
+  }
 }

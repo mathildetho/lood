@@ -1,0 +1,33 @@
+.stepper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:50%;
+    right: 0;
+    transform: translate(200%, -50%);
+    z-index: 1;
+}
+
+.stepper__etape {
+    text-align: center;
+    color: var(--white);
+}
+
+.stepper__etape-title {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.stepper__etape-title--clickable {
+    opacity:1;
+    cursor: pointer;
+}
+
+.stepper__etape-line {
+    height: 5rem;
+    width: 1px;
+    background-color: var(--white);
+    margin: auto;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}

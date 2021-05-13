@@ -1,0 +1,10 @@
+.snackbars-wrapper {
+    position: absolute;
+    left: 50%;
+    top:0;
+    transform: translate(-50%, -200%);
+    z-index: 101;
+}
+.snackbars-wrapper--auth {
+    transform: translate(-50%, -50%);
+}

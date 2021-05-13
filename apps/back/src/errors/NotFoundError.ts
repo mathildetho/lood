@@ -1,16 +1,12 @@
 import CustomError from './CustomError';
 
 class NotFoundError extends CustomError {
-  constructor(public errors: string[] = []) {
-    super('Ressource not found');
-  }
-
   status = 404;
 
   serializeError(): { status: number; errors: string[] } {
     return {
-      status: this.status,
-      errors: this.errors,
+      status: 404,
+      errors: [this.message],
     };
   }
 }
