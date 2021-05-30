@@ -5,7 +5,7 @@
 
 .inscription__form, .connexion__form {
     width: 100%;
-    height: 50vh;
+    height: auto;
     display: flex;
     flex-direction: column;
 }

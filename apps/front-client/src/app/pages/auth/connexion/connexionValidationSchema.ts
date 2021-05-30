@@ -6,8 +6,8 @@ const initialValue = {
 };
 
 const connexionValidationSchema = yup.object().shape({
-  email: yup.string().required('Votre email est requis'),
-  password: yup.string().required('Votre mot de passe est requis'),
+  email: yup.string().required('Ton email est requis'),
+  password: yup.string().required('Ton mot de passe est requis'),
 });
 
 export { connexionValidationSchema, initialValue };

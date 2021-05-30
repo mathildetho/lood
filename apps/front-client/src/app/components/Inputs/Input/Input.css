@@ -47,3 +47,14 @@
 .input__content::placeholder {
     color: var(--blue);
 }
+
+.input__password-icon {
+    background-color: var(--light-blue);
+    height: 24px;
+    width: 24px;
+    padding: 8px;
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 12px;
+}

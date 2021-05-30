@@ -1,6 +1,6 @@
 import jwt, { Secret } from 'jsonwebtoken';
 import { Types } from 'mongoose';
-import { SECRET_KEY } from '../../config';
+import { SECRET_KEY } from '../../../config';
 
 const jwtsecret = SECRET_KEY as Secret;
 const expiration = 365 * 24 * 60 * 60 * 1000;

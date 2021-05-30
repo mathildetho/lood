@@ -7,7 +7,7 @@ const add = (
   state = initialState,
   action: {
     icon: string;
-    message: string;
+    message: { message: string };
     action: string;
     time: number;
     timer: NodeJS.Timeout;

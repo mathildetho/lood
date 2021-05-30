@@ -11,24 +11,35 @@ export interface MessageError {
 }
 
 // Gère les timers des snackbars et leurs transitions
-const SnackBarsWrapper = (props) => {
-  console.log('SnackBarsWrapper', props);
+const SnackBarsWrapper = (props: {
+  snackbars: { key: string; message: MessageError }[];
+  classNameAuth?: string;
+  removeSnackbar: (key: string) => void;
+}) => {
+  // enlève les messages dupliqués
+  const snackbars = props.snackbars.reduce((acc, current) => {
+    const notDuplicate = acc.find((item) => item.message !== current.message);
+    if (!notDuplicate) {
+      return acc.concat([current]);
+    } else {
+      return acc;
+    }
+  }, []);
+
   return (
     <div className={`snackbars-wrapper ${props.classNameAuth}`}>
-      {props.snackbars.map(
-        (snackbar: { key: string; message: MessageError }) => {
-          return (
-            <SnackBar
-              key={snackbar.key}
-              id={snackbar.key}
-              onClose={() => {
-                props.removeSnackbar(snackbar.key);
-              }}
-              message={snackbar.message}
-            />
-          );
-        }
-      )}
+      {snackbars.map((snackbar: { key: string; message: MessageError }) => {
+        return (
+          <SnackBar
+            key={snackbar.key}
+            id={snackbar.key}
+            onClose={() => {
+              props.removeSnackbar(snackbar.key);
+            }}
+            message={snackbar.message}
+          />
+        );
+      })}
     </div>
   );
 };

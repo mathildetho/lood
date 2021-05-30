@@ -1,9 +1,15 @@
-export const add = (icon: string, message: string, time: number) => (
+import { ApolloError } from '@apollo/client';
+
+export const add = (
+  icon: string,
+  message: { message: string } | ApolloError,
+  time: number
+) => (
   dispatch: (arg0: {
     type: string;
     key?: string;
     icon?: string;
-    message?: string;
+    message?: { message: string } | ApolloError;
     time?: number;
     timer?: NodeJS.Timeout;
   }) => void,

@@ -44,7 +44,7 @@ const InscriptionConfirmation = (props: {
 
   if (erreurActivation) {
     return (
-      <PageLayout>
+      <PageLayout auth>
         <span className="--white --body-text inscription-confirmation__message">
           Une erreur est survenue lors de l'activation de ton compte, <br />
           essaies de rafraîchir ta page.
@@ -55,7 +55,7 @@ const InscriptionConfirmation = (props: {
 
   if (!active) {
     return (
-      <PageLayout>
+      <PageLayout auth>
         {activationEnChargement && (
           <Loader message="Activation de ton compte lood en cours..." />
         )}
@@ -64,7 +64,7 @@ const InscriptionConfirmation = (props: {
   }
 
   return (
-    <PageLayout>
+    <PageLayout auth>
       <Loader />
     </PageLayout>
   );

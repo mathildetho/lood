@@ -21,6 +21,10 @@ const UserType = gql`
     user: User!
   }
 
+  type sendString {
+    message: String!
+  }
+
   input CreateUserInput {
     email: String
     password: String
@@ -50,7 +54,9 @@ const UserType = gql`
   type Mutation {
     createUser(userInput: CreateUserInput!): User!
     activateUser(token: String!): UserWithToken!
-    loginUser(email: String!, password: String!): UserWithToken
+    loginUser(email: String!, password: String!): UserWithToken!
+    sendEmailReinitPassword(email: String!): sendString!
+    reinitPassword(password: String!, token: String!): sendString!
     updateUserProfil(_id: ID!, userInput: UpdateUserProfilInput!): User!
     updateUserEmail(_id: ID!, email: String!): User!
     updateUserPassword(_id: ID!, password: String!): User!

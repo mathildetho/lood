@@ -13,6 +13,7 @@ export interface SnackBarProps {
 }
 
 const SnackBar = (props: SnackBarProps) => {
+  console.log('SnackBar', props);
   return (
     <div className="snackbar">
       <p className="snackbar__message">{props.message.message}</p>

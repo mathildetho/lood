@@ -1,0 +1,41 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-blue);
+    box-shadow: var(--light-shadow);
+    border-radius: 0 15px 15px 0;
+    height: 100%;
+    width: 8em;
+    padding: 3em 0;
+    justify-content: space-between;
+}
+
+.menu__icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__logo {
+    width: 5rem;
+}
+
+.menu__tabs {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8em 0;
+}
+
+.menu__deconnexion {
+    width: 4rem;
+}
+
+.menu__deconnexion:hover {
+    cursor: pointer;
+}
+
+.menu__deconnexion path {
+    fill: var(--white);
+}

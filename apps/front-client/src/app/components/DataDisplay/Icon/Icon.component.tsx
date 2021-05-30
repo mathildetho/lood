@@ -12,7 +12,7 @@ export interface IconProps {
 const Icon = (props: IconProps) => {
   const { path, className, onClick, classNameSVG } = props;
   return (
-    <div className={`icon ${className}`}>
+    <div className={`icon ${className}`} onClick={onClick}>
       <ReactSVG src={path} className={`icon__svg ${classNameSVG}`} />
     </div>
   );

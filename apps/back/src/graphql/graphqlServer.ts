@@ -2,7 +2,7 @@ import { makeExecutableSchema } from 'apollo-server';
 import { ApolloServer } from 'apollo-server-express';
 import typeDefs from './typeDef';
 import resolvers from './resolvers';
-import verifyToken from './utils/verifyToken';
+import verifyToken from './utils/token/verifyToken';
 
 const schema = makeExecutableSchema({
   typeDefs,

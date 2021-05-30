@@ -1,0 +1,29 @@
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+}
+
+.tab.active {
+
+}
+
+.tab__icon {
+    width: 4em;
+    height: auto;
+}
+
+.tab__icon path {
+    fill: var(--white);
+}
+
+.tab__name {
+    color: var(--white);
+    margin-top: 1em;
+    font-size: 16px;
+    font-weight: 500;
+}

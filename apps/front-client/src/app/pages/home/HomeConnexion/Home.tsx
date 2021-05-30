@@ -1,14 +1,14 @@
 import React from 'react';
-import Button from '../../components/Inputs/Button/Button.component';
+import Button from '../../../components/Inputs/Button/Button.component';
 import './Home.css';
 import { useHistory } from 'react-router-dom';
-import PageLayout from '../../components/Layout/PageLayout/PageLayout.component';
+import PageLayout from '../../../components/Layout/PageLayout/PageLayout.component';
 
 const Home = () => {
   const history = useHistory();
 
   return (
-    <PageLayout>
+    <PageLayout auth>
       <div className="Home__content-text">
         <h1 className="--h1 --white --margin-bottom-5">
           Parce que manger, c'est sacré.

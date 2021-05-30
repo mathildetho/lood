@@ -1,8 +1,11 @@
 import { FormikErrors } from 'formik';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Icon from '../../DataDisplay/Icon/Icon.component';
 import InputError from '../InputError/InputError.component';
 import Label from '../Label/Label.component';
 import './Input.css';
+import EyeClose from '../../../../assets/img/eye-close.svg';
+import EyeOpen from '../../../../assets/img/eye-open.svg';
 
 export interface InputProps {
   label: string;
@@ -36,6 +39,17 @@ const Input = (props: InputProps) => {
     onChange && onChange(e);
   };
 
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [typeInput, setTypeInput] = useState(type);
+
+  useEffect(() => {
+    if (passwordVisible && type === 'password') {
+      setTypeInput('text');
+    } else if (!passwordVisible && type === 'password') {
+      setTypeInput(type);
+    }
+  }, [passwordVisible, type]);
+
   return (
     <div className="input --margin-bottom-4">
       <div className="fieldset">
@@ -45,16 +59,25 @@ const Input = (props: InputProps) => {
           required={required}
           isValid={isValid}
         />
-        <input
-          className={`input__content --body-text input__content${
-            error && '--error'
-          }`}
-          name={name}
-          value={value || ''}
-          placeholder={placeholder}
-          onChange={changeHandler}
-          type={type}
-        />
+        <div style={{ position: 'relative', width: 'fit-content' }}>
+          <input
+            className={`input__content --body-text input__content${
+              error && '--error'
+            }`}
+            name={name}
+            value={value || ''}
+            placeholder={placeholder}
+            onChange={changeHandler}
+            type={typeInput}
+          />
+          {type === 'password' && (
+            <Icon
+              path={passwordVisible ? EyeOpen : EyeClose}
+              className="input__password-icon"
+              onClick={() => setPasswordVisible(!passwordVisible)}
+            />
+          )}
+        </div>
       </div>
       {error && <InputError error={error} />}
     </div>

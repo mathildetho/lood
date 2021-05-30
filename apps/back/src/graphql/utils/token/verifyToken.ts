@@ -1,6 +1,6 @@
 import jwt, { Secret } from 'jsonwebtoken';
 import validator from 'validator';
-import { SECRET_KEY } from '../../config';
+import { SECRET_KEY } from '../../../config';
 
 const jwtsecret = SECRET_KEY as Secret;
 

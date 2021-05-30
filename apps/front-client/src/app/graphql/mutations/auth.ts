@@ -59,3 +59,19 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const SEND_EMAIL_REINIT_PASSWORD = gql`
+  mutation sendEmailReinitPassword($email: String!) {
+    sendEmailReinitPassword(email: $email) {
+      message
+    }
+  }
+`;
+
+export const REINIT_PASSWORD = gql`
+  mutation reinitPassword($password: String!, $token: String!) {
+    reinitPassword(password: $password, token: $token) {
+      message
+    }
+  }
+`;
